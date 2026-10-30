@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>带键盘事件的计算器</string>
   </property>
   <property name="styleSheet">
    <string notr="true">QMainWindow {
