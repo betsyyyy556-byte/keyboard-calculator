@@ -13,6 +13,8 @@ MainWindow::MainWindow(QWidget *parent)
     , errorState(false)
 {
     ui->setupUi(this);
+    setFocusPolicy(Qt::StrongFocus);
+    ui->display->setFocusPolicy(Qt::NoFocus);
 
     ui->display->setText("0");
     ui->display->setReadOnly(true);
@@ -21,11 +23,12 @@ MainWindow::MainWindow(QWidget *parent)
     const QList<QPushButton *> buttons = findChildren<QPushButton *>();
 
     for (QPushButton *button : buttons) {
+        button->setFocusPolicy(Qt::NoFocus);
+
         connect(button, &QPushButton::clicked, this, [this, button]() {
             handleButton(button->text());
         });
     }
-}
 
 MainWindow::~MainWindow()
 {
